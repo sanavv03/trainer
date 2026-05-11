@@ -78,3 +78,77 @@ mst, weight = kruskal_mst(vertices, edges)
 # --- Final Output ---
 print("\nMinimum Spanning Tree:", mst)
 print("Total Weight of MST:", weight)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ START ]
+    |
+    v
+[ INPUT: Vertices and Weighted Edges ]
+    |
+    v
+[ SORT EDGES ]
+Sort all edges based on their weight (Smallest -> Largest)
+    |
+    v
+[ INITIALIZE DISJOINT SET ]
+Every Vertex starts as its own parent (Isolated Island)
+    |
+    v
++----------------------------+
+| ITERATE THROUGH SORTED EDGES | <-----------+
++----------------------------+               |
+    |                                        |
+    v                                        |
+[ FIND ROOTS ]                               |
+Find the 'Root' (Captain) of Vertex U and Vertex V   |
+    |                                        |
+    v                                        |
+[ ARE ROOTS DIFFERENT? ]                     | (Repeat for
+    |               |                        |  next edge)
+ (YES)            (NO)                       |
+    |               |                        |
+    v               v                        |
+[ ADD TO MST ]   [ DISCARD EDGE ]            |
+- Union(U, V)    (Prevents a Cycle)          |
+- Add weight                                 |
+- Save edge                                  |
+    |               |                        |
+    +---------------+------------------------+
+    |
+    v
+[ ARE ALL EDGES PROCESSED? ]
+    |
+    v
+[ OUTPUT ]
+- Resulting MST List
+- Total Minimum Weight
+    |
+    v
+[ END ]
